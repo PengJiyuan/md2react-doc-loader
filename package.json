@@ -1,0 +1,28 @@
+{
+  "name": "md2react-doc-loader",
+  "version": "0.0.1",
+  "description": "Webpack loader, Markdown to react demo document, for generate react component document.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PengJiyuan/md2react-doc-loader.git"
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "markdown",
+    "react",
+    "doc",
+    "demo",
+    "codepen"
+  ],
+  "author": "PengJiyuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PengJiyuan/md2react-doc-loader/issues"
+  },
+  "homepage": "https://github.com/PengJiyuan/md2react-doc-loader#readme"
+}
