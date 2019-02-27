@@ -42,7 +42,11 @@ module: {
         {
           loader: 'md2react-doc-loader',
           options: {
-            demoDir: 'demo'
+            demoDir: 'demo',
+            templateDir: '@templates',
+            babelConfig: {
+              ...
+            }
           }
         }
       ]
@@ -55,7 +59,21 @@ module: {
 
 ### demoDir [string]
 
+`default: demo`
+
 Specify demo dir, relative to your entry md file.
+
+### templateDir [string]
+
+`default: node_modules/md2react-doc-loader/tempaltes`
+
+Tempalte dir for md2react-doc-loader.
+
+### babelConfig [object]
+
+See [Babel config](https://babeljs.io/docs/en/next/options).
+
+For compile markdown jsx.
 
 ## LICENSE
 
