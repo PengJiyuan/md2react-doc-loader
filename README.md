@@ -1,2 +1,48 @@
-# md2react-codedoc-loader
-Markdown to react code demo document, for generate react component document.
+# md2react-doc-loader
+
+This is a Webpack loader, will translate markdown to react component.
+
+And if you specify demo folder, it will generate demo effect and code preview.
+
+## Install
+
+```bash
+npm i md2react-doc-loader -D
+```
+
+## Usage
+
+webpack documentation: [Loaders](https://webpack.js.org/loaders/)
+
+Within your webpack configuration object, you'll need to add the md2react-doc-loader to the list of modules, like so:
+
+You should put `babel-loader` before md2react-doc-loader, because md2react-doc-loader's output is ES6 format and contains jsx.
+
+```js
+module: {
+  rules: [
+    {
+      test: /\.md$/,
+      exclude: /(node_modules|bower_components)/,
+      use: [
+        {
+          loader: 'babel-loader',
+          options: {
+            ...
+          }
+        },
+        {
+          loader: 'md2react-doc-loader',
+          options: {
+            ...
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+## LICENSE
+
+[MIT](./LICENSE) @[PengJiyuan](https://github.com/PengJiyuan)
