@@ -23,6 +23,7 @@
     "no-useless-constructor": 0,
     "no-use-before-define": ["error", { "functions": false, "classes": false }],
     "no-unused-vars": [2, { "vars": "all", "args": "none" }],
-    "no-param-reassign": 0
+    "no-param-reassign": 0,
+    "comma-dangle": 0,
   }
 }
