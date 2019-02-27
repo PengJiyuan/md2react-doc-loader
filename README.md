@@ -65,7 +65,7 @@ Specify demo dir, relative to your entry md file.
 
 ### templateDir [string] !required
 
-Tempalte dir for md2react-doc-loader.
+Template dir for md2react-doc-loader.
 
 You can get a demo template by:
 
