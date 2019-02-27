@@ -1,0 +1,42 @@
+.codebox-wrapper {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border: 1px solid#ddd;
+  border-radius: 4px;
+
+  .demo {
+    padding: 30px 20px;
+  }
+  .code {
+    padding: 10px 10px 0 10px;
+    border-top: 1px solid #ddd;
+
+    .code-preview {
+      > div {
+        position: relative;
+        .header {
+          display: inline-block;
+          position: absolute;
+          top: -32px;
+          left: 10px;
+          padding: 0 10px;
+          background-color: #fff;
+          font-weight: 500;
+        }
+      }
+    }
+
+    pre {
+      max-height: 400px;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+      overflow-y: auto;
+      font-size: 14px;
+      margin: 0 -10px;
+      padding: 24px 14px;
+      > code {
+        background: #fff;
+      }
+    }
+  }
+}
