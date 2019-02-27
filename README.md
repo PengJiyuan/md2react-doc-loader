@@ -31,7 +31,7 @@ module: {
   rules: [
     {
       test: /\.md$/,
-      exclude: /(node_modules|bower_components)/,
+      exclude: /(node_modules)/,
       use: [
         {
           loader: 'babel-loader',
@@ -43,7 +43,7 @@ module: {
           loader: 'md2react-doc-loader',
           options: {
             demoDir: 'demo',
-            templateDir: '@templates',
+            templateDir: 'src/templates',
             babelConfig: {
               ...
             }
@@ -63,11 +63,30 @@ module: {
 
 Specify demo dir, relative to your entry md file.
 
-### templateDir [string]
-
-`default: node_modules/md2react-doc-loader/tempaltes`
+### templateDir [string] !required
 
 Tempalte dir for md2react-doc-loader.
+
+You can get a demo template by:
+
+```bash
+cp -R your/node_modules/md2react-doc-loader/templates path/to/templates
+```
+
+then:
+
+```js
+{
+  loader: 'md2react-doc-loader',
+  options: {
+    demoDir: 'demo',
+    templateDir: 'path/to/templates',
+    babelConfig: {
+      ...
+    }
+  }
+}
+```
 
 ### babelConfig [object]
 
