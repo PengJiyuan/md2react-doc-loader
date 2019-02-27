@@ -19,6 +19,14 @@ Within your webpack configuration object, you'll need to add the md2react-doc-lo
 You should put `babel-loader` before md2react-doc-loader, because md2react-doc-loader's output is ES6 format and contains jsx.
 
 ```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import MD from './README.md';
+
+ReactDOM.render(<MD />, document.getElementById('container'));
+```
+
+```js
 module: {
   rules: [
     {
@@ -34,7 +42,7 @@ module: {
         {
           loader: 'md2react-doc-loader',
           options: {
-            ...
+            demoDir: 'demo'
           }
         }
       ]
@@ -42,6 +50,12 @@ module: {
   ]
 }
 ```
+
+## Options
+
+### demoDir [string]
+
+Specify demo dir, relative to your entry md file.
 
 ## LICENSE
 
