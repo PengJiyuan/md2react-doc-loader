@@ -25,5 +25,6 @@
     "no-unused-vars": [2, { "vars": "all", "args": "none" }],
     "no-param-reassign": 0,
     "comma-dangle": 0,
+    "func-names": 0
   }
 }
