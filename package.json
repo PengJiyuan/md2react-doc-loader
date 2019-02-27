@@ -4,7 +4,8 @@
   "description": "Webpack loader, Markdown to react demo document, for generate react component document.",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "git": "git add .",
+    "lint": "eslint lib/ --fix --cache"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,14 @@
     "front-matter": "^3.0.1",
     "marked": "^0.6.1",
     "node-prismjs": "^0.1.2"
-  }
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "lint",
+    "git"
+  ]
 }
