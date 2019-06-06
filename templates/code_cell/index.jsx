@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconCode, IconDesign } from '@byted/byteui/icon';
+import { IconCode, IconInteraction } from '@byted/byteui/icon';
 
 class CodeCell extends React.PureComponent {
   state = {
@@ -18,8 +18,8 @@ class CodeCell extends React.PureComponent {
     return (
       <div className={`code ${codeOpen ? '' : 'hide'}`}>
         <div className="select-bar">
-          <button className="doc_design disabled"><IconDesign />查看交互说明</button>
-          <button onClick={this.toggleCode} className="doc_code"><IconCode />查看代码</button>
+          <button className="doc_design disabled"><IconInteraction style={{ fontSize: 16 }} />查看交互说明</button>
+          <button onClick={this.toggleCode} className="doc_code"><IconCode style={{ fontSize: 16 }} />查看代码</button>
         </div>
         {props.children}
       </div>

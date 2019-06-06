@@ -1,36 +1,42 @@
+@border-color: #f0f1f2;
+
 .codebox-wrapper {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  border: 1px solid#ddd;
+  margin-bottom: 36px;
+  background-color: #fff;
+  border: 1px solid @border-color;
   border-radius: 4px;
+  transition: all .3s;
+  // &:hover {
+  //   border: 1px solid #3370FF;
+  //   box-shadow: 0 0 0 2px #ccdbff;
+  // }
 
   .demo {
-    padding: 30px 42px;
+    padding: 60px 44px 70px 44px;
   }
   .description {
     position: relative;
-    border-top: 1px solid #ddd;
-    padding: 20px 45px 34px 45px;
+    border-top: 1px solid @border-color;
+    padding: 34px 45px 40px 45px;
     .header {
       display: inline-block;
       position: absolute;
       top: -12px;
       left: 33px;
       padding: 0 10px;
+      color: #282f38;
       background-color: #fff;
       font-size: 16px;
       font-weight: 500;
     }
-    .header + * {
-      margin-top: 20px;
-    }
   }
   .code {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid @border-color;
 
     .select-bar {
       width: 100%;
       height: 50px;
+      border-radius: 0 0 4px 4px;
       overflow: hidden;
       .doc_design,
       .doc_code {
@@ -60,7 +66,7 @@
         }
       }
       .doc_design {
-        border-right: 1px solid #ddd;
+        border-right: 1px solid @border-color;
       }
     }
 
@@ -71,7 +77,8 @@
       font-size: 14px;
       padding: 0;
       margin-bottom: 0;
-      border-top: 1px solid #ddd;
+      border: 0;
+      border-top: 1px solid @border-color;
       overflow: hidden;
       > code {
         padding: 0;
@@ -79,7 +86,7 @@
         overflow-x: auto;
         display: block;
         padding: 45px;
-        background: #fafbfc;
+        background: #f5f6f7;
       }
     }
     &.hide {

@@ -3,7 +3,7 @@ import './style.less';
 
 export default function CodeBlockWrapper(props) {
   return (
-    <div className="codebox-wrapper">
+    <div id={props.id} className="codebox-wrapper">
       {props.children}
     </div>
   );
