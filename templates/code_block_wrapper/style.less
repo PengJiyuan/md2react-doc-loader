@@ -6,10 +6,6 @@
   border: 1px solid @border-color;
   border-radius: 4px;
   transition: all .3s;
-  // &:hover {
-  //   border: 1px solid #3370FF;
-  //   box-shadow: 0 0 0 2px #ccdbff;
-  // }
 
   .demo {
     padding: 60px 44px 70px 44px;
@@ -57,8 +53,8 @@
           cursor: not-allowed;
         }
         &:not(.disabled):hover,
-        &:not(.disabled):focus,
-        &:not(.disabled):active {
+        &:not(.disabled):active,
+        &:not(.disabled).active {
           color: #3370ff;
         }
         svg {
@@ -89,10 +85,26 @@
         background: #f5f6f7;
       }
     }
-    &.hide {
-      pre.code_block {
-        border-top: none;
-        display: none;
+
+    .content-code-design {
+      .design,
+      .code {
+        .design_wrapper {
+          padding: 45px;
+          border-top: 1px solid @border-color;
+          background: #f5f6f7;
+          box-sizing: border-box;
+          overflow: hidden;
+        }
+        &.hide {
+          display: none;
+          .design_wrapper {
+            border-top: none;
+          }
+          pre.code_block {
+            border-top: none;
+          }
+        }
       }
     }
   }
