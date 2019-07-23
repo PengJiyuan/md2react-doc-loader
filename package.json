@@ -1,6 +1,6 @@
 {
   "name": "md2react-doc-loader",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "Webpack loader, Markdown to react demo document, for generate react component document.",
   "main": "./lib/index.js",
   "scripts": {
