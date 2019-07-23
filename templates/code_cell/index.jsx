@@ -1,10 +1,27 @@
 import React from 'react';
-import { IconCode, IconInteraction } from '@byted/byteui/icon';
+import { findDOMNode } from 'react-dom';
+import { Tooltip } from '@byted/byteui';
+import { IconCode, IconInteraction, IconCopy, IconCodeSandbox, IconCodepen } from '@byted/byteui/icon';
+import ClipboardJS from 'clipboard';
 
 class CodeCell extends React.PureComponent {
   state = {
     codeOpen: false,
-    designOpen: false
+    designOpen: false,
+    copyContent: '复制代码'
+  }
+
+  componentDidMount() {
+    const clipboard = new ClipboardJS(this.clipButton, {
+      target: () => {
+        return findDOMNode(this).querySelector('.language-js');
+      }
+    });
+    clipboard.on('success', (e) => {
+      e.clearSelection();
+      this.setState({ copyContent: '已复制' });
+      this.triggerCopy.updatePopupPosition();
+    });
   }
 
   toggleCode = () => {
@@ -21,9 +38,17 @@ class CodeCell extends React.PureComponent {
     });
   }
 
+  onVisibleChange = (visible) => {
+    if (!visible) {
+      setTimeout(() => {
+        this.setState({ copyContent: '复制代码' });
+      }, 300);
+    }
+  }
+
   render() {
     const props = this.props;
-    const { codeOpen, designOpen } = this.state;
+    const { codeOpen, designOpen, copyContent } = this.state;
     return (
       <div className={`code ${codeOpen ? '' : 'hide'}`}>
         <div className="select-bar">
@@ -38,6 +63,21 @@ class CodeCell extends React.PureComponent {
           </div>
           <div className={`code ${codeOpen ? '' : 'hide'}`}>
             {props.children}
+            <Tooltip content="在 CodePen 中打开" position="left">
+              <button className="button codepen">
+                <IconCodepen />
+              </button>
+            </Tooltip>
+            <Tooltip content="在 CodeSandbox 中打开" position="left">
+              <button className="button codesandbox">
+                <IconCodeSandbox />
+              </button>
+            </Tooltip>
+            <Tooltip onVisibleChange={this.onVisibleChange} ref={ref => this.triggerCopy = ref} content={copyContent} position="left">
+              <button className="button copy" ref={ref => this.clipButton = ref}>
+                <IconCopy />
+              </button>
+            </Tooltip>
           </div>
         </div>
       </div>

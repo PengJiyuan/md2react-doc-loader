@@ -8,12 +8,14 @@
   transition: all .3s;
 
   .demo {
-    padding: 60px 44px 70px 44px;
+    padding: 60px 44px;
+    color: #282f38;
+    overflow: hidden;
   }
   .description {
     position: relative;
     border-top: 1px solid @border-color;
-    padding: 34px 45px 40px 45px;
+    padding: 24px 44px 40px 44px;
     .header {
       display: inline-block;
       position: absolute;
@@ -27,7 +29,38 @@
     }
   }
   .code {
+    position: relative;
     border-top: 1px solid @border-color;
+
+    > .button {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      right: 16px;
+      border-radius: 4px;
+      border: solid 1px #e6e8eb;
+      background-color: #ffffff;
+      font-size: 14px;
+      color: #939aa3;
+      outline: none;
+      transition: all .3s;
+      cursor: pointer;
+    }
+
+    > .codepen {
+      top: 16px;
+      cursor: not-allowed;
+    }
+    > .codesandbox {
+      top: 68px;
+      cursor: not-allowed;
+    }
+    > .copy {
+      top: 120px;
+      &:hover {
+        color: #282f38;
+      }
+    }
 
     .select-bar {
       width: 100%;
